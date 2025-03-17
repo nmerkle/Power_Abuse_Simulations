@@ -17,7 +17,6 @@ Dabei stellen die Variablen t Zeit und u räumliche Dimensionen (x, y) dar. Man 
 Diese Gruppen sind über Reaktions- und Diffusionstermen miteinander verknüpft – analog zu Modellen in der Ökologie oder Epidemiologie.
 
 Ein Auszug der zentralen Gleichungen:
-Hier sind die Hauptgleichungen des mathematischen Modells:
 
 ![Formeln](pdes.png)
 

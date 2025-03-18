@@ -1,46 +1,38 @@
-# Systemdynamik des Machtmissbrauchs in der Wissenschaft – Ein mathematisches Modell
+# System dynamics of the abuse of power in science - A mathematical model
                            
-Wie breitet sich Machtmissbrauch in der Wissenschaft aus? Welche Rolle spielen Whistleblower, Reformen oder das stille Verschwinden idealistischer Forschender?
-Diese Fragen treiben viele in der Wissenschaft um – doch was, wenn wir solche Dynamiken mathematisch modellieren könnten?
+How does abuse of power spread in science? What role do whistleblowers, reforms or the silent disappearance of idealistic researchers play? These questions are on the minds of many in science - but what if we could model such dynamics mathematically? Here I present a reaction-diffusion model that describes precisely these processes - based on partial differential equations (PDEs) and simulated with a few lines of code in Python.
 
-Ich stelle hier ein Reaktions-Diffusions-Modell vor, das genau diese Prozesse beschreibt – basierend auf partiellen Differentialgleichungen (PDEs) und simuliert mit ein paar Zeilen Code in Python.
+The model: Four groups - one dynamic The model distinguishes between four groups of scientists: 
+* S(t, u) - Susceptible people who are at risk due to structural or social conditions.
+* A(t, u) - People who actively abuse power.
+* W(t, u) - Whistleblowers who uncover grievances.
+* D(t, u) - People who resign and leave the system. The variables t represent time and u represent spatial dimensions (x, y).
 
-Das Modell: Vier Gruppen – eine Dynamik
-Das Modell unterscheidet vier Gruppen von Wissenschaftler:innen:
+However, other influencing factors or dimensions could also be used and simulated, such as integrity, mental health, career success, narcissism, Machiavellianism or psychopathy of scientists.
+The groups shown are linked to each other via reaction and diffusion terms - analogous to models in ecology or epidemiology
 
-S(t, u) – Anfällige Personen, die durch strukturelle oder soziale Bedingungen gefährdet sind.
-A(t, u) – Personen, die aktiv Macht missbrauchen.
-W(t, u) – Whistleblower, die Missstände aufdecken.
-D(t, u) – Personen, die resignieren und das System verlassen.
-Dabei stellen die Variablen t Zeit und u räumliche Dimensionen (x, y) dar. Man könnte allerdings auch weitere Einfluss Faktoren bzw. Dimensionen heranziehen, wie z. B. Integrität,  Erfolg in der Karriere oder Narzissmus, Machiavellismus oder Psychopathie Anteile der Persönlichkeit.
-
-Diese Gruppen sind über Reaktions- und Diffusionstermen miteinander verknüpft – analog zu Modellen in der Ökologie oder Epidemiologie.
-
-Ein Auszug der zentralen Gleichungen:
+# An extract of the central equations
 
 ![Formeln](pdes.png)
 
-Die Begriffe wie
-DD∇2 stehen dabei für die räumliche Diffusion – also die Verbreitung von Verhalten oder Einfluss.
-Stochastisches Rauschen (Skandale, Zufallsereignisse) z. B. η(t,u) und  ξ(t,u), ist ebenfalls Teil des Modells.
+The terms such as D∇2 stand for spatial diffusion - i.e. the spread of behaviour or influence. Stochastic noise (scandals, random events), e.g. η(t,u) and ξ(t,u), is also part of the model.
 
-Reformen als Gegenkraft
+# Reforms as a counterforce
+A reform term R(D,u) models structural countermeasures - e.g. transparency guidelines, protection systems for whistleblowers or cultural change. From a certain point in time, the pressure for reform sets in and gradually reduces the influence of abusers. This has the effect that reforms slow down the abuse of power, especially when many scientists leave (D) or the system changes.
 
-Ein Reformterm R(D,u) modelliert strukturelle Gegenmaßnahmen – z. B. Transparenzrichtlinien, Schutzsysteme für Whistleblower oder Kulturwandel. Ab einem bestimmten Zeitpunkt setzt der Reformdruck ein und reduziert schrittweise den Einfluss der Missbrauchenden. Dies bewirkt, dass Reformen den Machtmissbrauch bremsen, besonders wenn viele Wissenschaftler aussteigen oder das System sich wandelt.
+# What are the benefits of such a model?
+Systemic perspective: We can visualise interactions, e.g. how dropouts and abusers further weaken the system.
+Simulate scenarios: What happens without reforms? Or with stronger whistleblower protection?
+Stimulate discussion: This model is a tool for reflection - not a dogma, but a way of thinking.
 
-Was bringt so ein Modell?
-Systemische Sichtweise: Wir können Wechselwirkungen sichtbar machen, z. B. wie Aussteiger und Missbrauchende das System weiter schwächen.
-Szenarien simulieren: Was passiert ohne Reformen? Oder mit stärkerem Whistleblower-Schutz?
-Diskussion anregen: Dieses Modell ist ein Werkzeug zur Reflexion – kein Dogma, sondern ein Denkansatz.
-Code & Simulation verfügbar
-
-Ich habe das Modell in Python umgesetzt. Die Simulation ist offen zugänglich: 
-
+# Code & simulation available
+I have implemented the model in Python. The simulation is openly accessible and can be extended with further plots:
 
 **[SAWD Simulation Notebook](SAWD_PDEs.ipynb)**
 
-Erweiterungsmöglichkeiten
-Das Ganze lässt sich noch weiter ausbauen, indem Animationen mit interaktiven UI-Elementen kombiniert werden. Dadurch können Parameter variiert werden, um zu beobachten, wie empfindlich das System auf Änderungen reagiert und wann stabile Zustände erreicht werden. Darüber hinaus wäre es möglich, agentenbasierte Modelle in Verbindung mit Reinforcement Learning zu nutzen, um zu zeigen, wie Agenten ihr Verhalten durch systemische Bedingungen anpassen, um erfolgreich zu agieren. Während PDEs systemische Trends zeigen, könnten agentenbasierte Modelle z.B. Mikroentscheidungen einzelner Akteure besser erfassen. Eine Kombination wäre sicherlich spannend! 
+# Expansion options 
+The simulations can be expanded even further by combining animations with interactive UI elements. This allows parameters to be varied in order to observe how sensitively the system reacts to changes and when stable states are reached. Furthermore, it would be possible to use an agent-based model in conjunction with reinforcement learning to show how agents (also at the micro level) adapt their behaviour through systemic conditions in order to act successfully. While PDEs show systemic trends, an agent-based model could better capture e.g. micro-decisions (and their impacts) of individual agents. A combination would certainly be exciting!
+
 
 In diesem Zusammenhang habe ich mit der Python-Bibliothek agentpy [0] eine erste Simulation implementiert, die ich im Laufe der Zeit mit Reinforcement Learning-Agenten erweitern möchte.
 

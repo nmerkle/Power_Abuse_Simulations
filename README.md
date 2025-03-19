@@ -1,4 +1,4 @@
-## System dynamics of the abuse of power in science - A mathematical model
+## System dynamics of power abuse in science - A mathematical model
                            
 How does abuse of power spread in science? What role do whistleblowers, reforms or the silent disappearance of idealistic researchers play? These questions are on the minds of many in science - but what if we could model such dynamics mathematically? Here I present a reaction-diffusion model that describes precisely these processes - based on partial differential equations (PDEs) and simulated with a few lines of code in Python.
 

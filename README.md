@@ -2,7 +2,8 @@
                            
 How does abuse of power spread in science? What role do whistleblowers, reforms or the silent disappearance of idealistic researchers play? These questions are on the minds of many in science - but what if we could model such dynamics mathematically? Here I present a reaction-diffusion model that describes precisely these processes - based on partial differential equations (PDEs) and simulated with a few lines of code in Python.
 
-The model: Four groups - one dynamic The model distinguishes between four groups of scientists: 
+## The model: Four groups - one dynamic
+The model distinguishes between four groups of scientists: 
 * S(t, u) - Susceptible people who are at risk due to structural or social conditions.
 * A(t, u) - People who actively abuse power.
 * W(t, u) - Whistleblowers who uncover grievances.
@@ -35,6 +36,6 @@ I have implemented the mathematical model as well as the agent-based model in Py
 ## Expansion options 
 The simulations can be expanded even further by combining animations with interactive UI elements. This allows parameters to be varied in order to observe how sensitively the system reacts to changes and when stable states are reached. Furthermore, it would be possible to use an agent-based model in conjunction with reinforcement learning to show how agents (also at the micro level) adapt their behaviour through systemic conditions in order to act successfully. While PDEs show systemic trends, an agent-based model could better capture e.g. micro-decisions (and their impacts) of individual agents. A combination would certainly be exciting!
 
-## TODOs: 
-* Expansion of the agent-based model with Reinforcement Learning to analyse the dynamics on the micro and macro level.
+## Reinforcement Learning
+The Policy Gradient, resp. REINFORCE algorithm has been integrated in the **[Agent Simulation Notebook](Agent_Simulation.ipynb)** Jupyter notebook. It is a basic implementation that collects policy trajectories and gained rewards and trains based on these trajectories and their gain optimal policies. 
  
